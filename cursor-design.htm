@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cursor Design Project</title>
+
+    <style media="screen">
+        body {
+            /*width: 825px;*/
+            margin: 0 auto;
+            background: linear-gradient(#56ab2f, #a8e063);
+            /*border: 1px solid #000;*/
+            cursor: url(cursor-flat.png) auto;
+            position: relative;
+            cursor: none;
+        }
+
+        body::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .mydiv {
+            width: 100px;
+            height: 100px;
+            /*border: 1px solid #000;*/
+            float: left;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        #mycursor {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #kid {
+            background-color: white;
+            animation: colorchange 2s ease-in 0s infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        @keyframes colorchange {
+            0% {
+                transform: scale(0.3);
+                background-color: white;
+            }
+            50% {
+                transform: scale(0.6);
+                background-color: white;
+            }
+            100% {
+                transform: scale(1);
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="mycursor">
+        <div id="kid"></div>
+    </div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+    <div class="mydiv"></div>
+</body>
+
+
+<script>
+    var divel = document.querySelectorAll("div");
+    divel.forEach(function(e) {
+        e.addEventListener("mouseover", changecolor);
+    });
+
+    function changecolor(e) {
+        var x = "#";
+        var characters = "0123456789abcdef";
+        for (var i = 0; i < 6; i++) {
+            x += characters[Math.floor(Math.random() * 16)];
+        }
+        e.target.style.backgroundColor = x;
+    }
+
+    // document.body.addEventListener("mousemove", myfun);
+    //
+    // function myfun(e) {
+    //     var x = e.pageX;
+    //     var y = e.pageY;
+    //     document.querySelector("div").innerHTML = `(${x}, ${y})`;
+    //     var mycursor = document.getElementById("mycursor");
+    // }
+
+    window.addEventListener("mousemove", cursorfun);
+
+    function cursorfun(e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        mycursor.style.transform = `translate(${x}px,${y}px)`;
+        mycursor.style.filter = "blur(0px)";
+    }
+</script>
+
+</html>
